@@ -1,4 +1,5 @@
 :root {
+   scroll-behavior: smooth;
    --theme-color: deeppink;
    --secondary-theme-color: #242a20;
    --text-color: #fff;
@@ -11,7 +12,7 @@
    --letter-color-6: #f5926b;
 }
 
-@keyframes cover__name  {
+@keyframes zoom  {
    to {
       transform: scale(1);
    }
@@ -24,14 +25,14 @@
 .body {
    background-image: radial-gradient(var(--theme-color), var(--secondary-theme-color));
    color: var(--text-color);
-   font-family: 'Inter', 'San serif';
+   font-family: 'Inter', sans-serif;
 }
 .main {
    display: flex; 
    flex-direction: column;
 }
 
-.cover 
+.cover, 
 .acrostic {
    display: flex;
    align-items: center;
@@ -47,6 +48,7 @@
    display: block;
    font-weight: 900;
    padding: 0 2rem;
+   animation: zoom 1s alternate ease-in-out infinite;
 }
 
 .cover__name-letter {
@@ -93,13 +95,6 @@
    color: var(--letter-color-6)
 }
 
-.acrostic {
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   min-height: 100vh;
-}
-
 .acrostic__stanza {
    display: flex;
    flex-direction: column;
@@ -110,7 +105,7 @@
 }
 
 .acrostic__verse {
-   letter-spacing: .1rem;
+   letter-spacing: .01rem;
    font-weight: 500;
    text-shadow: 
       0 0 .5rem var(--highlight-text-color),
@@ -124,7 +119,7 @@
    color: var(--highlight-text-color);
 }
 
-@media (min-width: 854px){
+@media (min-width: 854px) {
    .cover__name {
       gap: 2rem;
       font-size: 8rem;

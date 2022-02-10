@@ -11,18 +11,28 @@
    --letter-color-6: #f5926b;
 }
 
+@keyframes cover__name  {
+   to {
+      transform: scale(1);
+   }
+   from {
+      transform: scale(1.1);
+   }
+}
+
+
 .body {
    background-image: radial-gradient(var(--theme-color), var(--secondary-theme-color));
    color: var(--text-color);
-   font-family: Circular 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-   font-weight: 800;
+   font-family: 'Inter', 'San serif';
 }
 .main {
    display: flex; 
    flex-direction: column;
 }
 
-.cover {
+.cover 
+.acrostic {
    display: flex;
    align-items: center;
    justify-content: center;
@@ -32,10 +42,10 @@
 .cover__name {
    display: flex;
    gap: .5rem;
-   font-size: 6rem;
+   font-size: 4rem;
    text-decoration:none;
    display: block;
-   font-weight: 700;
+   font-weight: 900;
    padding: 0 2rem;
 }
 
@@ -83,3 +93,52 @@
    color: var(--letter-color-6)
 }
 
+.acrostic {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   min-height: 100vh;
+}
+
+.acrostic__stanza {
+   display: flex;
+   flex-direction: column;
+   gap: 1rem;
+   margin: 0;
+   padding: 0 2rem;
+   list-style: none;
+}
+
+.acrostic__verse {
+   letter-spacing: .1rem;
+   font-weight: 500;
+   text-shadow: 
+      0 0 .5rem var(--highlight-text-color),
+      0 0 1rem var(--highlight-text-color),
+      0 0 1.5rem var(--highlight-text-color);
+}
+
+.acrostic__verse::first-letter {
+   font-size: 2rem;
+   font-weight: 600;
+   color: var(--highlight-text-color);
+}
+
+@media (min-width: 854px){
+   .cover__name {
+      gap: 2rem;
+      font-size: 8rem;
+      max-width: 1024px;
+      margin: auto;
+      padding: 0;
+   } 
+   .acrostic__stanza {
+      gap: 2rem;
+      max-width: 1024px;
+      margin: auto;
+      padding: 0;
+   }
+   .acrostic__verse {
+      font-size: 1.5rem;
+   }
+}
